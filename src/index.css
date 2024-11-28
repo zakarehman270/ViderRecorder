@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInOut {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+
+video {
+  transform: scaleX(-1);
+}
+
+video::-webkit-media-controls-enclosure {
+  transform: scaleX(-1);
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(100px);  /* Start below the container */
   }
-  
-  .animate-fadeInOut {
-    animation: fadeInOut 5s ease-in-out;
+  100% {
+    transform: translateY(0);  /* End at the normal position */
   }
-  
+}

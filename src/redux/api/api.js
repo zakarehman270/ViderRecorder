@@ -6,7 +6,7 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl: `${baseUrl}`,
-    prepareHeaders: (headers) => { 
+    prepareHeaders: (headers) => {
       return headers;
     },
   }),
@@ -17,11 +17,12 @@ export const apiSlice = createApi({
         method: "POST",
         body: newUser,
       }),
-      transformResponse: (response) => response,  // Just return the plain text
+      transformResponse: (response) => response, // Just return the plain text
+    }),
+    getQuestions: builder.query({
+      query: () => "/questions",
     }),
   }),
 });
 
-export const {
-  useUploadVideoChunksMutation,
-} = apiSlice;
+export const { useUploadVideoChunksMutation , useGetQuestionsQuery  } = apiSlice;
